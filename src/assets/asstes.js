@@ -88,6 +88,22 @@ export const projectData = [
         image: "https://images.unsplash.com/photo-1551434678-e076c223a692",
         tech: ["Node.js", "Express.js", "MongoDB", "JWT"],
     },
+    {
+        title: "TripNest Admin Operations",
+        description:
+            "Developed backend services for an admin panel to manage bookings, users, and operations. Built RESTful APIs with secure authentication and role-based access control.",
+        image:
+            "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+        tech: ["Node.js", "Express.js", "MongoDB", "JWT"],
+    },
+    {
+        title: "ChatGPT Clone (Backend)",
+        description:
+            "Built backend for an AI chat application integrating external AI APIs. Implemented prompt handling, API routing, and response management with scalable architecture.",
+        image:
+            "https://images.unsplash.com/photo-1677442136019-21780ecad995",
+        tech: ["Node.js", "Express.js", "REST API", "AI API"],
+    }
 ];
 export const profileData = [
     {
