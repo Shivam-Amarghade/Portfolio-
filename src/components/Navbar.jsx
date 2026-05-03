@@ -8,7 +8,7 @@ export default function Navbar() {
         <div div className="flex items-center justify-between">
           <div className="text-2xl font-bold text-zinc-800">
             {/* logo*/}
-            <span>THE-</span>
+
             <span className="text-teal-800 font-orbitron">SHIVAM -AMARGHADE</span>
           </div>
           {/* navlinks */}
