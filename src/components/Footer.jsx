@@ -1,51 +1,81 @@
-import { FaLinkedin, FaGithub, FaInstagram, FaArrowRight } from "react-icons/fa";
-function Footer() {
-    return <div className="py-12 border-t border-zinc-200">
-        <div className="max-w-7xl mx-auto px-6">
-            <div className="flex flex-col md:flex-row items-center justify-between">
+import { FaLinkedin, FaGithub, FaInstagram, FaArrowUp } from "react-icons/fa6";
 
-                {/* Logo / Name */}
-                <div className="mb-6 md:mb-0">
-                    <span className="uppercase text-2xl font-bold">
-                        The-Shivam-Amarghade
-                    </span>
-                </div>
+export default function Footer() {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
-                {/* Social Links */}
-                <div className="flex space-x-6 text-2xl">
+  return (
+    <footer className="border-t border-white/[0.08] bg-[#000000] py-12">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+          
+          {/* Brand */}
+          <div className="flex flex-col items-center md:items-start text-center md:text-left">
+            <span className="text-sm font-semibold text-white tracking-tight">
+              Shivam Amarghade
+            </span>
+            <span className="text-xs text-[#86868b] font-mono mt-0.5">
+              Full-Stack & Backend Systems Engineer
+            </span>
+          </div>
 
-                    <a
-                        href="www.linkedin.com/in/shivam-amarghade"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hover:text-blue-600 transition"
-                    >
-                        <FaLinkedin />
-                    </a>
+          {/* Social Links & Back to Top */}
+          <div className="flex items-center gap-4">
+            <div className="flex items-center space-x-2">
+              <a
+                href="https://www.linkedin.com/in/shivam-amarghade"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="w-8 h-8 rounded-full bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.08] flex items-center justify-center text-[#86868b] hover:text-white transition-all text-sm"
+              >
+                <FaLinkedin />
+              </a>
 
-                    <a
-                        href="https://github.com/Shivam-Amarghade"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hover:text-black transition"
-                    >
-                        <FaGithub />
-                    </a>
+              <a
+                href="https://github.com/Shivam-Amarghade"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+                className="w-8 h-8 rounded-full bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.08] flex items-center justify-center text-[#86868b] hover:text-white transition-all text-sm"
+              >
+                <FaGithub />
+              </a>
 
-                    <a
-                        href="https://www.instagram.com/shivamcode99?igsh=dWRkdndtdmhkYXk1"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hover:text-pink-500 transition"
-                    >
-                        <FaInstagram />
-                    </a>
-
-                </div>
-
+              <a
+                href="https://www.instagram.com/shivamcode99?igsh=dWRkdndtdmhkYXk1"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="w-8 h-8 rounded-full bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.08] flex items-center justify-center text-[#86868b] hover:text-white transition-all text-sm"
+              >
+                <FaInstagram />
+              </a>
             </div>
-        </div>
-    </div>
-}
 
-export default Footer;
+            <button
+              onClick={scrollToTop}
+              className="w-8 h-8 rounded-full bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.08] flex items-center justify-center text-[#86868b] hover:text-white transition-all cursor-pointer text-xs"
+              title="Back to Top"
+            >
+              <FaArrowUp />
+            </button>
+          </div>
+
+        </div>
+
+        {/* Copyright */}
+        <div className="mt-8 pt-6 border-t border-white/[0.05] flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[#6e6e73] font-mono">
+          <div>
+            © {new Date().getFullYear()} Shivam Amarghade. All rights reserved.
+          </div>
+          <div>
+            Built with React & Vite
+          </div>
+        </div>
+
+      </div>
+    </footer>
+  );
+}
