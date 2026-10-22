@@ -5,9 +5,7 @@ import {
     FaMobile,
     FaReact,
     FaSchool,
-    FaDiagramProject,
-    FaBuildingColumns,
-    FaAward
+    FaBuildingColumns
 } from "react-icons/fa6";
 import profileImg from "../assets/heroImage.jpeg";
 import aboutImg from "./2582650.jpg";

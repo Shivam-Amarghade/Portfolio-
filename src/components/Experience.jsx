@@ -5,7 +5,7 @@ import LaptopMockup from "./LaptopMockup";
 
 export default function Experience() {
   return (
-    <section id="Experience" className="py-24 relative apple-ambient-glow">
+    <section id="Experience" className="py-24 relative apple-ambient-glow scroll-mt-28">
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         
         {/* Section Header */}

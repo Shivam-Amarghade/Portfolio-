@@ -1,6 +1,8 @@
 import { FaLinkedin, FaGithub, FaInstagram, FaArrowUp } from "react-icons/fa6";
 
 export default function Footer() {
+  const footerNav = ["Home", "Experience", "Work", "Skills", "About", "Contact"];
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -21,7 +23,19 @@ export default function Footer() {
           </div>
 
           {/* Social Links & Back to Top */}
-          <div className="flex items-center gap-4">
+          <div className="flex flex-col sm:flex-row items-center gap-4">
+            <nav aria-label="Footer">
+              <ul className="flex flex-wrap items-center justify-center gap-3 text-xs text-[#86868b]">
+                {footerNav.map((item) => (
+                  <li key={item}>
+                    <a href={`#${item}`} className="hover:text-white transition-colors">
+                      {item}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+
             <div className="flex items-center space-x-2">
               <a
                 href="https://www.linkedin.com/in/shivam-amarghade"
@@ -55,6 +69,7 @@ export default function Footer() {
             </div>
 
             <button
+              type="button"
               onClick={scrollToTop}
               className="w-8 h-8 rounded-full bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.08] flex items-center justify-center text-[#86868b] hover:text-white transition-all cursor-pointer text-xs"
               title="Back to Top"

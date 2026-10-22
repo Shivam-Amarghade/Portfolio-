@@ -1,10 +1,10 @@
-import { FaCode, FaArrowRight, FaGraduationCap, FaCircleCheck, FaAward } from "react-icons/fa6";
+import { FaCode, FaArrowRight, FaCircleCheck, FaAward } from "react-icons/fa6";
 import { profileData, achievementsData, assets, personalInfo } from "../assets/asstes";
 import TiltCard from "./TiltCard";
 
 export default function About() {
   return (
-    <section id="About" className="py-28 relative apple-grid-pattern">
+    <section id="About" className="py-28 relative apple-grid-pattern scroll-mt-28">
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         
         {/* Section Header */}

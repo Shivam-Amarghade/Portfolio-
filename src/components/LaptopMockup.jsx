@@ -119,7 +119,7 @@ export default function LaptopMockup({
                 href={url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="absolute inset-0 bg-black/40 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-20"
+                className="absolute inset-0 bg-black/40 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 focus-visible:opacity-100 transition-opacity flex items-center justify-center z-20"
               >
                 <span className="px-4 py-2 rounded-full apple-btn-primary text-xs font-semibold flex items-center gap-2 shadow-2xl scale-95 group-hover:scale-100 transition-transform">
                   <span>Open Live Application</span>

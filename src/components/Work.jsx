@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FaGithub, FaArrowRight, FaArrowUpRightFromSquare, FaLaptopCode } from "react-icons/fa6";
+import { FaGithub, FaArrowRight, FaArrowUpRightFromSquare } from "react-icons/fa6";
 import { projectData } from "../assets/asstes";
 import TiltCard from "./TiltCard";
 import LaptopMockup from "./LaptopMockup";
@@ -18,7 +18,7 @@ export default function Work() {
   const otherProjects = projectData.slice(1);
 
   return (
-    <section id="Work" className="py-28 relative apple-grid-pattern">
+    <section id="Work" className="py-28 relative apple-grid-pattern scroll-mt-28">
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         
         {/* Section Header */}
@@ -38,6 +38,7 @@ export default function Work() {
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
+                aria-pressed={selectedCategory === cat}
                 className={`px-3.5 py-1.5 rounded-full text-xs font-medium transition-all duration-200 cursor-pointer ${
                   selectedCategory === cat
                     ? "bg-white/15 text-white font-semibold shadow-sm"

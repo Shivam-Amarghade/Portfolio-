@@ -1,6 +1,5 @@
 import { useState, useRef } from "react";
 import {
-  FaArrowRight,
   FaEnvelope,
   FaLinkedin,
   FaGithub,
@@ -66,7 +65,7 @@ export default function Contect() {
   };
 
   return (
-    <section id="Contact" className="py-28 relative apple-ambient-glow">
+    <section id="Contact" className="py-28 relative apple-ambient-glow scroll-mt-28">
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         
         {/* Section Header */}
@@ -187,6 +186,8 @@ export default function Contect() {
                       ? "bg-white/[0.06] border border-white/20 text-white"
                       : "bg-red-500/10 border border-red-500/30 text-red-300"
                   }`}
+                  role="status"
+                  aria-live="polite"
                 >
                   {statusMessage.text}
                 </div>
@@ -195,26 +196,36 @@ export default function Contect() {
               <form ref={form} onSubmit={sendEmail} className="space-y-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-[11px] font-mono text-[#86868b] mb-1.5 uppercase tracking-wider">
+                    <label
+                      htmlFor="contact-name"
+                      className="block text-[11px] font-mono text-[#86868b] mb-1.5 uppercase tracking-wider"
+                    >
                       Your Name *
                     </label>
                     <input
                       required
+                      id="contact-name"
                       name="user_name"
                       type="text"
+                      autoComplete="name"
                       placeholder="Alex Morgan"
                       className="w-full px-4 py-3 rounded-xl bg-white/[0.03] border border-white/[0.08] focus:border-white/30 focus:outline-none text-xs text-white placeholder:text-[#52525b] transition-all"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-[11px] font-mono text-[#86868b] mb-1.5 uppercase tracking-wider">
+                    <label
+                      htmlFor="contact-email"
+                      className="block text-[11px] font-mono text-[#86868b] mb-1.5 uppercase tracking-wider"
+                    >
                       Your Email *
                     </label>
                     <input
                       required
+                      id="contact-email"
                       name="user_email"
                       type="email"
+                      autoComplete="email"
                       placeholder="alex@company.com"
                       className="w-full px-4 py-3 rounded-xl bg-white/[0.03] border border-white/[0.08] focus:border-white/30 focus:outline-none text-xs text-white placeholder:text-[#52525b] transition-all"
                     />
@@ -222,26 +233,36 @@ export default function Contect() {
                 </div>
 
                 <div>
-                  <label className="block text-[11px] font-mono text-[#86868b] mb-1.5 uppercase tracking-wider">
+                  <label
+                    htmlFor="contact-subject"
+                    className="block text-[11px] font-mono text-[#86868b] mb-1.5 uppercase tracking-wider"
+                  >
                     Subject *
                   </label>
                   <input
                     required
+                    id="contact-subject"
                     name="subject"
                     type="text"
+                    autoComplete="off"
                     placeholder="Role Opportunity / Collaboration at..."
                     className="w-full px-4 py-3 rounded-xl bg-white/[0.03] border border-white/[0.08] focus:border-white/30 focus:outline-none text-xs text-white placeholder:text-[#52525b] transition-all"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-[11px] font-mono text-[#86868b] mb-1.5 uppercase tracking-wider">
+                  <label
+                    htmlFor="contact-message"
+                    className="block text-[11px] font-mono text-[#86868b] mb-1.5 uppercase tracking-wider"
+                  >
                     Message *
                   </label>
                   <textarea
                     required
+                    id="contact-message"
                     name="message"
                     rows={4}
+                    autoComplete="off"
                     placeholder="Share role details, team, and next steps..."
                     className="w-full px-4 py-3 rounded-xl bg-white/[0.03] border border-white/[0.08] focus:border-white/30 focus:outline-none text-xs text-white placeholder:text-[#52525b] transition-all resize-none"
                   />
