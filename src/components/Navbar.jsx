@@ -28,6 +28,17 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    const closeOnEscape = (event) => {
+      if (event.key === "Escape") {
+        setMobileMenuOpen(false);
+      }
+    };
+
+    window.addEventListener("keydown", closeOnEscape);
+    return () => window.removeEventListener("keydown", closeOnEscape);
+  }, []);
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4 px-6">
       <div className="max-w-6xl mx-auto">
@@ -42,6 +53,7 @@ export default function Navbar() {
           <a
             href="#Home"
             className="group flex items-center gap-3 cursor-pointer"
+            aria-label="Go to Home section"
           >
             <div className="w-8 h-8 rounded-full bg-white/[0.08] border border-white/10 flex items-center justify-center text-xs font-bold text-white tracking-wider group-hover:bg-white/15 transition-all">
               SA
@@ -54,13 +66,17 @@ export default function Navbar() {
           </a>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden md:flex items-center gap-1 bg-white/[0.03] border border-white/[0.06] px-3 py-1 rounded-full backdrop-blur-xl">
+          <nav
+            className="hidden md:flex items-center gap-1 bg-white/[0.03] border border-white/[0.06] px-3 py-1 rounded-full backdrop-blur-xl"
+            aria-label="Primary"
+          >
             {navMenu.map((item) => {
               const isActive = activeSection === item;
               return (
                 <a
                   key={item}
                   href={`#${item}`}
+                  aria-current={isActive ? "page" : undefined}
                   className={`px-3.5 py-1.5 text-xs font-medium rounded-full transition-all duration-200 ${
                     isActive
                       ? "text-white bg-white/10 font-semibold"
@@ -97,6 +113,8 @@ export default function Navbar() {
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="md:hidden p-2 text-[#86868b] hover:text-white rounded-full bg-white/[0.04] border border-white/[0.08]"
             aria-label="Toggle menu"
+            aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-navigation"
           >
             {mobileMenuOpen ? <FaXmark className="text-base" /> : <FaBars className="text-base" />}
           </button>
@@ -105,7 +123,10 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden mt-2 max-w-6xl mx-auto px-6 py-5 bg-[#121215]/95 backdrop-blur-2xl rounded-2xl border border-white/[0.08] shadow-2xl">
+        <div
+          id="mobile-navigation"
+          className="md:hidden mt-2 max-w-6xl mx-auto px-6 py-5 bg-[#121215]/95 backdrop-blur-2xl rounded-2xl border border-white/[0.08] shadow-2xl"
+        >
           <div className="flex flex-col space-y-2">
             {navMenu.map((item) => (
               <a

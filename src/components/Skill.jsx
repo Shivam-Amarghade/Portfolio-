@@ -21,7 +21,7 @@ export default function Skill() {
       : skillsData.filter((s) => s.category === activeTab);
 
   return (
-    <section id="Skills" className="py-28 relative apple-ambient-glow">
+    <section id="Skills" className="py-28 relative apple-ambient-glow scroll-mt-28">
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         
         {/* Section Header */}
@@ -41,6 +41,7 @@ export default function Skill() {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
+                aria-pressed={activeTab === tab.id}
                 className={`px-3.5 py-1.5 rounded-full text-xs font-medium transition-all duration-200 cursor-pointer ${
                   activeTab === tab.id
                     ? "bg-white/15 text-white font-semibold"

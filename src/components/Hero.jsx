@@ -1,4 +1,4 @@
-import { FaArrowRight, FaArrowUpRightFromSquare, FaBuildingColumns } from "react-icons/fa6";
+import { FaArrowRight, FaArrowUpRightFromSquare } from "react-icons/fa6";
 import { SiNodedotjs, SiReact } from "react-icons/si";
 import { assets, personalInfo } from "../assets/asstes";
 import TiltCard from "./TiltCard";
@@ -7,7 +7,7 @@ export default function Hero() {
   return (
     <section
       id="Home"
-      className="relative min-h-screen flex items-center justify-center pt-32 pb-20 overflow-hidden apple-ambient-glow apple-grid-pattern"
+      className="relative min-h-screen flex items-center justify-center pt-32 pb-20 overflow-hidden apple-ambient-glow apple-grid-pattern scroll-mt-28"
     >
       <div className="max-w-6xl mx-auto px-6 relative z-10 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
@@ -25,14 +25,14 @@ export default function Hero() {
 
             {/* Main Headline */}
             <h1 className="text-4xl sm:text-6xl lg:text-6xl font-extrabold tracking-tight mb-4 leading-[1.08] text-apple-headline">
-              Engineering with precision.
+              Shivam Amarghade
               <br />
-              <span className="text-[#f5f5f7]">Built for scale.</span>
+              <span className="text-[#f5f5f7]">Software Engineer building scalable products.</span>
             </h1>
 
             {/* Subtitle */}
             <p className="text-lg sm:text-xl text-[#86868b] max-w-xl mx-auto lg:mx-0 mb-8 leading-relaxed font-normal">
-              I'm <strong className="text-white font-semibold">{personalInfo.name}</strong> — B.Tech in CSBS from OIST Bhopal (8.14 CGPA). Experienced in MERN stack, MySQL, and enterprise e-Governance platforms (<a href="https://edak.mponline.gov.in" target="_blank" rel="noopener noreferrer" className="text-[#2997ff] hover:underline font-medium">E-DAK</a>) at MPOnline Limited (Govt of MP + TCS).
+              Full-stack developer focused on React, Node.js, and backend systems. I build reliable, user-focused software and contributed to enterprise e-Governance systems like <a href="https://edak.mponline.gov.in" target="_blank" rel="noopener noreferrer" className="text-[#2997ff] hover:underline font-medium">E-DAK</a> at MPOnline Limited (Govt of MP + TCS).
             </p>
 
             {/* Apple Style CTAs */}
@@ -63,6 +63,13 @@ export default function Hero() {
                 className="px-4 py-3 rounded-full text-xs font-mono text-[#86868b] hover:text-white transition-colors"
               >
                 Download Resume ↗
+              </a>
+
+              <a
+                href="#Contact"
+                className="px-5 py-3 rounded-full text-sm font-medium apple-btn-secondary flex items-center gap-2"
+              >
+                Contact Me
               </a>
             </div>
 
